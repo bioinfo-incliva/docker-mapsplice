@@ -1,0 +1,14 @@
+In file included from SamRec.h:6,
+                 from Convert2FusionAlignment.cpp:3:
+JunctionSeed.h:172:7: warning: no newline at end of file
+In file included from Convert2FusionAlignment.cpp:3:
+SamRec.h:260:7: warning: no newline at end of file
+Convert2FusionAlignment.cpp:456:2: warning: no newline at end of file
+In file included from SamRec.h:6,
+                 from SamRec.cpp:1:
+JunctionSeed.h:172:7: warning: no newline at end of file
+In file included from SamRec.cpp:1:
+SamRec.h:260:7: warning: no newline at end of file
+SamRec.cpp:2447:2: warning: no newline at end of file
+In file included from JunctionSeed.cpp:1:
+JunctionSeed.h:172:7: warning: no newline at end of file

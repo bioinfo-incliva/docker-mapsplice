@@ -1,0 +1,12 @@
+noremap
+./bowtie -v 1 -f -k 40 -m 40 -p 8 --seg_len 25 --chrom_tab [chrom size file] --split_index_path [split index path] --ref_seq_path [reference sequence path] --mapsplice_out [output_file] --double_anchor_noncanon --max_ins [int] --max_del [int] /bioinfo/projects/zeng/mapsplice_multi/humanchridxallnohap -1 /bioinfo/projects/kai/ground_truth/paired_reads.fa.1 -2 /bioinfo/projects/kai/ground_truth/paired_reads.fa.2 ../bowtie.bwtout >../log.txt
+
+no remap sample command line:
+./bowtie -v 1 -f -k 40 -m 40 -p 8 --seg_len 25 --chrom_tab /bioinfo/projects/kai/hg19/hg19_M/chrom_sizes --split_index_path /bioinfo/projects/zeng/mapsplice_multi/sub_500w/ --ref_seq_path /bioinfo/projects/zeng/mapsplice_multi/hg19/ --mapsplice_out /bioinfo/projects/zeng/mapsplice_multi/arg_test_mapsplice_result.txt --double_anchor_noncanon --max_ins 3 --max_del 10 /bioinfo/projects/kai/hg19/humanchridx_M -1 /bioinfo/projects/kai/ground_truth/paired_reads.fa.1 -2 /bioinfo/projects/kai/ground_truth/paired_reads.fa.2 ../bowtie.bwtout >../log.txt  
+
+remap
+./bowtie -v 1 -f -k 40 -m 40 -p 8 --seg_len 25 --chrom_tab [chrom size file] --split_index_path [split index path] --ref_seq_path [reference sequence path] --juncdb_index [synthetic index basename] --mapsplice_out [output_file] --optimize_repeats --output_unmapped --double_anchor_noncanon --max_ins [int] --max_del [int] /bioinfo/projects/zeng/mapsplice_multi/humanchridxallnohap -1 /bioinfo/projects/kai/ground_truth/paired_reads.fa.1 -2 /bioinfo/projects/kai/ground_truth/paired_reads.fa.2 ../bowtie.bwtout >../log.txt
+
+remap sample command line:
+./bowtie -v 1 -f -k 40 -m 40 -p 8 --seg_len 25 --chrom_tab /bioinfo/projects/kai/hg19/hg19_M/chrom_sizes --split_index_path /bioinfo/projects/zeng/mapsplice_multi/sub_500w/ --ref_seq_path /bioinfo/projects/zeng/mapsplice_multi/hg19/ --juncdv_index /bioinfo/projects/zeng/test_jund_index --mapsplice_out /bioinfo/projects/zeng/mapsplice_multi/arg_test_mapsplice_result.txt --optimize_repeats --output_unmapped --double_anchor_noncanon --max_ins 3 --max_del 10 /bioinfo/projects/kai/hg19/humanchridx_M -1 /bioinfo/projects/kai/ground_truth/paired_reads.fa.1 -2 /bioinfo/projects/kai/ground_truth/paired_reads.fa.2 ../bowtie.bwtout >../log.txt  
+

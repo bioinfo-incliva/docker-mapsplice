@@ -1,0 +1,104 @@
+In file included from SamRec.h:6,
+                 from AlignmentHandler.h:6,
+                 from test_handler.cpp:1:
+SpliceWay.h:33:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:6,
+                 from test_handler.cpp:1:
+SamRec.h:268:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:7,
+                 from test_handler.cpp:1:
+ReadNextTagAlignHandler.h:238:7: warning: no newline at end of file
+In file included from JunctionHandler.h:7,
+                 from AlignmentHandler.h:8,
+                 from test_handler.cpp:1:
+JunctionSeed.h:154:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:8,
+                 from test_handler.cpp:1:
+JunctionHandler.h:225:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:9,
+                 from test_handler.cpp:1:
+FusionSamRec.h:134:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:10,
+                 from test_handler.cpp:1:
+disjointset.h:40:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:11,
+                 from test_handler.cpp:1:
+UnionExpressedRegions.h:16:7: warning: no newline at end of file
+test_handler.cpp:75:2: warning: no newline at end of file
+In file included from SamRec.h:6,
+                 from JunctionHandler.h:6,
+                 from JunctionHandler.cpp:1:
+SpliceWay.h:33:7: warning: no newline at end of file
+In file included from JunctionHandler.h:6,
+                 from JunctionHandler.cpp:1:
+SamRec.h:268:7: warning: no newline at end of file
+In file included from JunctionHandler.h:7,
+                 from JunctionHandler.cpp:1:
+JunctionSeed.h:154:7: warning: no newline at end of file
+In file included from JunctionHandler.cpp:1:
+JunctionHandler.h:225:7: warning: no newline at end of file
+In file included from JunctionHandler.cpp:2:
+ReadNextTagAlignHandler.h:238:7: warning: no newline at end of file
+In file included from SpliceWay.cpp:1:
+SpliceWay.h:33:7: warning: no newline at end of file
+In file included from SamRec.h:6,
+                 from SamRec.cpp:1:
+SpliceWay.h:33:7: warning: no newline at end of file
+In file included from SamRec.cpp:1:
+SamRec.h:268:7: warning: no newline at end of file
+In file included from SamRec.cpp:2:
+JunctionSeed.h:154:7: warning: no newline at end of file
+SamRec.cpp:2578:2: warning: no newline at end of file
+sharedlib.cpp:107:7: warning: no newline at end of file
+In file included from SamRec.h:6,
+                 from AlignmentHandler.h:6,
+                 from AlignmentHandler.cpp:1:
+SpliceWay.h:33:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:6,
+                 from AlignmentHandler.cpp:1:
+SamRec.h:268:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:7,
+                 from AlignmentHandler.cpp:1:
+ReadNextTagAlignHandler.h:238:7: warning: no newline at end of file
+In file included from JunctionHandler.h:7,
+                 from AlignmentHandler.h:8,
+                 from AlignmentHandler.cpp:1:
+JunctionSeed.h:154:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:8,
+                 from AlignmentHandler.cpp:1:
+JunctionHandler.h:225:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:9,
+                 from AlignmentHandler.cpp:1:
+FusionSamRec.h:134:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:10,
+                 from AlignmentHandler.cpp:1:
+disjointset.h:40:7: warning: no newline at end of file
+In file included from AlignmentHandler.h:11,
+                 from AlignmentHandler.cpp:1:
+UnionExpressedRegions.h:16:7: warning: no newline at end of file
+In file included from JunctionSeed.h:5,
+                 from JunctionSeed.cpp:1:
+SpliceWay.h:33:7: warning: no newline at end of file
+In file included from JunctionSeed.h:6,
+                 from JunctionSeed.cpp:1:
+SamRec.h:268:7: warning: no newline at end of file
+In file included from JunctionSeed.cpp:1:
+JunctionSeed.h:154:7: warning: no newline at end of file
+In file included from JunctionSeed.h:5,
+                 from FusionSamRec.h:6,
+                 from FusionSamRec.cpp:1:
+SpliceWay.h:33:7: warning: no newline at end of file
+In file included from JunctionSeed.h:6,
+                 from FusionSamRec.h:6,
+                 from FusionSamRec.cpp:1:
+SamRec.h:268:7: warning: no newline at end of file
+In file included from FusionSamRec.h:6,
+                 from FusionSamRec.cpp:1:
+JunctionSeed.h:154:7: warning: no newline at end of file
+In file included from FusionSamRec.cpp:1:
+FusionSamRec.h:134:7: warning: no newline at end of file
+In file included from UnionExpressedRegions.cpp:1:
+UnionExpressedRegions.h:16:7: warning: no newline at end of file
+UnionExpressedRegions.cpp:5:2: warning: no newline at end of file
+In file included from disjointset.cpp:1:
+disjointset.h:40:7: warning: no newline at end of file

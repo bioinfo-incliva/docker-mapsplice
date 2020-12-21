@@ -1,0 +1,54 @@
+In file included from src/alignmenthandler_multi/SamRec.h:6,
+                 from src/alignmenthandler_multi/AlignmentHandler.h:6,
+                 from src/alignmenthandler_multi/test_handler.cpp:1:
+src/alignmenthandler_multi/SpliceWay.h:33:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/AlignmentHandler.h:6,
+                 from src/alignmenthandler_multi/test_handler.cpp:1:
+src/alignmenthandler_multi/SamRec.h:293:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/AlignmentHandler.h:7,
+                 from src/alignmenthandler_multi/test_handler.cpp:1:
+src/alignmenthandler_multi/ReadNextTagAlignHandler.h:238:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/JunctionHandler.h:7,
+                 from src/alignmenthandler_multi/AlignmentHandler.h:8,
+                 from src/alignmenthandler_multi/test_handler.cpp:1:
+src/alignmenthandler_multi/JunctionSeed.h:181:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/AlignmentHandler.h:8,
+                 from src/alignmenthandler_multi/test_handler.cpp:1:
+src/alignmenthandler_multi/JunctionHandler.h:255:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/AlignmentHandler.h:9,
+                 from src/alignmenthandler_multi/test_handler.cpp:1:
+src/alignmenthandler_multi/FusionSamRec.h:134:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/AlignmentHandler.h:10,
+                 from src/alignmenthandler_multi/test_handler.cpp:1:
+src/alignmenthandler_multi/disjointset.h:42:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/AlignmentHandler.h:11,
+                 from src/alignmenthandler_multi/test_handler.cpp:1:
+src/alignmenthandler_multi/UnionExpressedRegions.h:16:7: warning: no newline at end of file
+src/alignmenthandler_multi/test_handler.cpp:99:2: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/SamRec.h:6,
+                 from src/alignmenthandler_multi/JunctionHandler.h:6,
+                 from src/alignmenthandler_multi/JunctionHandler.cpp:1:
+src/alignmenthandler_multi/SpliceWay.h:33:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/JunctionHandler.h:6,
+                 from src/alignmenthandler_multi/JunctionHandler.cpp:1:
+src/alignmenthandler_multi/SamRec.h:293:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/JunctionHandler.h:7,
+                 from src/alignmenthandler_multi/JunctionHandler.cpp:1:
+src/alignmenthandler_multi/JunctionSeed.h:181:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/JunctionHandler.cpp:1:
+src/alignmenthandler_multi/JunctionHandler.h:255:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/JunctionHandler.cpp:2:
+src/alignmenthandler_multi/ReadNextTagAlignHandler.h:238:7: warning: no newline at end of file
+src/alignmenthandler_multi/JunctionHandler.cpp: In member function 'void JunctionHandler::GenerateMeanAndSD(std::vector<int, std::allocator<int> >, double&, double&)':
+src/alignmenthandler_multi/JunctionHandler.cpp:1761: warning: passing 'double' for argument 1 to 'void std::vector<_Tp, _Alloc>::resize(size_t, _Tp) [with _Tp = int, _Alloc = std::allocator<int>]'
+src/alignmenthandler_multi/JunctionHandler.cpp:1765: warning: passing 'double' for argument 1 to 'void std::vector<_Tp, _Alloc>::resize(size_t, _Tp) [with _Tp = int, _Alloc = std::allocator<int>]'
+src/alignmenthandler_multi/JunctionHandler.cpp: In member function 'void JunctionHandler::KSTest(std::vector<int, std::allocator<int> >, double&, std::ofstream*)':
+src/alignmenthandler_multi/JunctionHandler.cpp:1800: warning: passing 'double' for argument 1 to 'void std::vector<_Tp, _Alloc>::resize(size_t, _Tp) [with _Tp = int, _Alloc = std::allocator<int>]'
+In file included from src/alignmenthandler_multi/SamRec.h:6,
+                 from src/alignmenthandler_multi/SamRec.cpp:1:
+src/alignmenthandler_multi/SpliceWay.h:33:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/SamRec.cpp:1:
+src/alignmenthandler_multi/SamRec.h:293:7: warning: no newline at end of file
+In file included from src/alignmenthandler_multi/SamRec.cpp:2:
+src/alignmenthandler_multi/JunctionSeed.h:181:7: warning: no newline at end of file
+src/alignmenthandler_multi/SamRec.cpp:2988:2: warning: no newline at end of file

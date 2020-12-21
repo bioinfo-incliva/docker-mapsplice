@@ -1,0 +1,207 @@
+#########################################################################
+#                                                                       #
+#                       MapSplice v2.0 beta                             #
+#                                                                       #
+# Developed by Kai Wang and Zheng Zeng                                  #
+#     with Jinze Liu (PI) and Jan Prins (PI)                            #
+# Copyright (C) 2012, University of Kentucky, Lexington, KY, USA  and   #
+#     The University of North Carolina at Chapel Hill, NC, USA          #
+#                                                                       #
+# MapSplice accurately determines spliced alignments of RNA-seq reads   #
+# to a reference genome without need for annotations.  For additional   #     
+# information please see the publication:                               #
+#     Wang et al. 2010. "MapSplice: accurate mapping of RNA-seq reads   #
+#     for splice junction discovery." Nucleic Acids Res. 38(18):e178.   #
+#                                                                       #
+# Note: MapSplice uses a modified version of the unspliced alignment    #
+# software Bowtie v0.12.7                                               #
+#     (Langmead et al. 2009. "Ultrafast and memory-efficient            #
+#     alignment of short DNA sequences to the human genome." Genome     #
+#     Biology 2009, 10:R25).                                            #
+#########################################################################
+
+#########################################################################
+# COPYRIGHT AND PERMISSION NOTICE                                       #
+#   please see the included COPYRIGHT.txt file                          #
+#########################################################################
+
+#########################################################################
+# Requirements:                                                         #
+#       MapSplice v2.0 beta has been tested on Ubuntu 10.04.3 LTS       #
+#########################################################################
+
+#########################################################################
+# Installation instructions: please see the included INSTALL file       #
+#########################################################################
+
+
+#########################################################################
+# Usage:                                                                #
+#                                                                       #
+# python mapsplice_multi_thread.py -c /sequence_directory/ -x           # 
+# /index_directory/index_prefix -1 read.fq.1 -2 read.fq.2               #
+# 				   	     				#
+# please direct questions or bug reports to:				#
+#    mapsplice@netlab.uky.edu	 	 				#
+#                                                                       #
+#########################################################################
+
+
+#########################################################################
+# Required Arguments                                                    #
+#                                                                       #
+# -c/--chromosome-dir <string>                                          #
+# The directory containing the reference genome sequence FASTA files    #
+#  -One chromosome per file                                             #
+#  -Chromosome name after '>' in the first line of the FASTA file       #
+#       should not contain any tab or blank space.                      #
+#  -Base filename should be the same as the chromosome name,            #
+#       filename extension should be '.fa'                              #
+#  -e.g. If the chromosome name after '>' is 'chr1', then the file name #
+#       should be 'chr1.fa'                                             #
+#                                                                       #
+# -x <string>                                                           #
+# The basename (including directory path) of index to be searched.      #
+# The basename is the name of any of the index files up to but not      #
+# including the final .1.ebwt / .rev.1.ebwt / etc...                    #
+#  -If -b is not specified or the specified index can not be found,     #
+#       index will be built from the reference genomes specified in -c  #
+#       (costs additional time)                                         #
+#  -e.g. if the index file name is example_index.1.ewbt, then the base  #
+#       name is example_index                                           #
+#  -Indexes are reusable.                                               #
+#  -Make sure the bowtie index is consistent with the chromosome files  #
+#       specified in -c.                                                #
+#                                                                       #       
+# -1 <string>                                                           #
+# Comma-separated (no blank spaces) list of reads in FASTA/FASTQ format.#
+# Only used when running pair-end reads, this should contain #1 mates   #
+#       (filename usually includes _1).                                 #
+#                                                                       #       
+# -2 <string>                                                           #
+# Comma-separated (no blank spaces) list of reads in FASTA/FASTQ format.#
+# Only used when running pair-end reads. This should contain #2 mates   #
+#       (filename usually includes _2).                                 #
+#       Files must be in the same order with those specified in -1.     #
+#                                                                       #       
+#########################################################################
+
+
+#########################################################################
+# Optional arguments: input/output and performance parameters           #
+#                                                                       #
+# -p/--threads <int>                                                    #
+# Number of threads to be used for parallel alignments.                 #
+# Default: 1                                                            #
+#                                                                       #
+# -o/--output <string>                                                  #
+# The directory in which MapSplice will write its output.               #
+# The default is "./mapsplice_out/".                                    #
+#                                                                       #
+# --bam                                                                 #
+#  Generate BAM output.                                                 #
+#  By default MapSplice exports alignmnets in SAM format.               #
+#                                                                       #
+# --keep-tmp                                                            #
+#  Keep the the intermediate files. By default MapSplice deletes all    #
+#  the intermediate files once finished running.                        #
+#                                                                       #
+# --gene-gtf                                                            #
+#  gene gtf file, downloadable from ensemble website.                   #
+#  e.g. ftp://ftp.ensembl.org/pub/release-66/gtf/homo_sapiens/          #
+#                                                                       #
+# --qual-scale                                                          #
+#  Quality scale of input fastq reads                                   #
+#  phred64(default)       Illumina 1.3+                                 #
+#  phred33                Illumina 1.8+                                 #
+#  solexa64               Solexa/Illumina 1.0                           #
+#                                                                       #
+#########################################################################
+
+
+#########################################################################
+# Optional arguments: Alignments & Alignment Based Filtering            #
+#                                                                       #
+# -l/--seglen <int>                                                     #
+# Length of segments a read will be divided into. The default is 25.    #
+#  -Suggested to be in range of [18,25], segment lengths shorter than   #
+#   18 may cause more false positive and MapSplice may get              #
+#   significantly slower.                                               #
+#                                                                       #
+# --min-map-len <int>                                                   #
+#  MapSplice will only report read alignments that can be mapped longer #
+#  than this threshold. By default, MapSplice only reports read         #
+#  alignments than can be fully mapped.                                 #
+#                                                                       #
+# -m/--splice-mis <int>                                                 #
+#  The maximum number of mismatches that are allowed in a segment       #
+#  crossing a splice junction. The default is 1.                        #
+#                                                                       #
+# --max-append-mis <int>                                                #
+#  The maximum number of mismatches allowed in all but one segment      #
+#  Default = 3                                                          #
+#                                                                       #
+# -k/max-hits <int>                                                     #
+#  Maximum alignments per read. Any read that has more than <int>       #
+#  alignments will be abandoned.                                        #
+#                                                                       #
+#########################################################################
+
+
+#########################################################################
+# Optional arguments: Biological Filtering                              #
+#                                                                       #
+# -I/--max-intron <int>                                                 #
+#  The maximum length of splice junctions. Mapsplice will not search    #
+#  for any splice junctions with a gap longer than this threshold.      #
+#  The default is 200,000.                                              #
+#                                                                       #
+# --del                                                                 #
+#  Maximum deletion length.  This is a deletion in the read and an      #
+#  insertion in the reference genome                                    #
+#  The Default is 6                                                     #
+#                                                                       #
+# --ins                                                                 #
+#  Maximum insertion length.  This is an insertion in the read and a    #
+#  deletion in the reference genome                                     #
+#  The Default is 6                                                     #
+#                                                                       #
+# --non-canonical                                                       #
+#  Search for non-canonical in addition to canonical or semi-canonical  #
+#  junctions.                                                           #
+#  By default MapSplice will only identify canonical (GT-AG or CT-AC)   #
+#  and semi-canonical (AT-AC, GT-AT, CT-GC, or GC-AG) junctions.        #
+#                                                                       #
+# --fusion | --fusion-non-canonical                                     #
+#  Search for canonical and semi-canonical fusion junctions (--fusion)  #
+#  OR                                                                   #
+#  Search for canonical, semi-canonical, and non-canonical fusion       #
+#  junctions (--fusion-non-canonical)                                   #
+#  By default MapSplice will not identify fusion junctions              #
+#                                                                       #
+#########################################################################
+
+
+#########################################################################
+# Optional arguments: Other options                                     #
+#                                                                       #
+# -h/--help                                                             #
+#  Print the usage message                                              #
+#                                                                       #
+# -v/--version                                                          #
+#  Print the version of MapSplice                                       #
+#                                                                       #
+#########################################################################
+
+
+Other:
+1. change file name of final result
+2. no need to show junctions before remapping
+3. clean logs
+4. clean unused directory
+4. record human readable parameters
+5. remove sed in pipeline
+6. clean python pipeline (lot of old stuff for MapSplice 1.x, tophat_dir, check_islands, mapsplice_segments, etc.)
+7. add option for maximum mismatches in read
+8. add option for maximum mismatches in a segment
+
